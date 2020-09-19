@@ -1,6 +1,5 @@
-package com.projectmanagementapp.demo.Entities;
+package com.projectmanagementapp.demo.entities;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -16,7 +15,7 @@ public class Project {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long projectId;
+    private Long projectId;
 
     private String stage;
     private String name;
