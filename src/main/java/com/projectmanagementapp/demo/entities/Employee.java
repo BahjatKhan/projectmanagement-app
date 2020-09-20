@@ -12,23 +12,24 @@ import javax.persistence.Id;
 @Getter
 @Setter
 @Entity
-public class Project {
-
+public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Getter(AccessLevel.NONE)
     @Setter(AccessLevel.NONE)
-    private Long projectId;
+    private Long employeeId;
 
-    private String stage;
-    private String name;
-    private String description;
-    public Project(){
+    private String firstName;
+    private String lastName;
+    private String email;
+
+    public Employee(){
 
     }
-    public Project(String stage, String name, String description) {
-        this.stage = stage;
-        this.name = name;
-        this.description = description;
+
+    public Employee(String firstName, String lastName, String email) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
     }
 }

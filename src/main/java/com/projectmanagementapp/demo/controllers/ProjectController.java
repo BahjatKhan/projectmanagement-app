@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class ProjectController {
 
     @Autowired
-    ProjectRepo projectRepo;
+    private ProjectRepo projectRepo;
 
     @GetMapping("/new")
     public String displayProjectForn(Model model){
