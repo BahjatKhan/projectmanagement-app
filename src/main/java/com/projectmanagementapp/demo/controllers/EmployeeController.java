@@ -21,7 +21,7 @@ public class EmployeeController {
 
             Employee employee= new Employee();
             model.addAttribute("employee",employee);
-            return "new-employee";
+            return "employee/new-employee";
 
         }
 

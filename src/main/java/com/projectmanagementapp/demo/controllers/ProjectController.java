@@ -20,7 +20,7 @@ public class ProjectController {
     public String displayProjectForn(Model model){
         Project project =new Project();
         model.addAttribute("project",project);
-        return "/new-project";
+        return "project/new-project";
     }
 
     //saving data to database
