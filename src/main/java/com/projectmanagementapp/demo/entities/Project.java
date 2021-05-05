@@ -1,34 +1,26 @@
 package com.projectmanagementapp.demo.entities;
 
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Getter
 @Setter
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
 public class Project {
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Getter(AccessLevel.NONE)
     @Setter(AccessLevel.NONE)
     private Long projectId;
-
     private String stage;
     private String name;
     private String description;
-    public Project(){
 
-    }
-    public Project(String stage, String name, String description) {
-        this.stage = stage;
-        this.name = name;
-        this.description = description;
-    }
+    @OneToMany(mappedBy = "project")
+    private List<Employee> employee;
+
 }

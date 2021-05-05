@@ -16,7 +16,7 @@
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
-		<java.version>14</java.version>
+		<java.version>8</java.version>
 	</properties>
 
 	<dependencies>
@@ -112,6 +112,12 @@
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-classic</artifactId>
 			<version>1.2.3</version>
+		</dependency>
+
+		<dependency>
+			<groupId>io.github.jpenren</groupId>
+			<artifactId>thymeleaf-ui-dialect</artifactId>
+			<version>1.1.0</version>
 		</dependency>
 
 

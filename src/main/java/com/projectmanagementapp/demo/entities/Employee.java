@@ -1,17 +1,14 @@
 package com.projectmanagementapp.demo.entities;
 
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Getter
 @Setter
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -23,13 +20,8 @@ public class Employee {
     private String lastName;
     private String email;
 
-    public Employee(){
-
-    }
-
-    public Employee(String firstName, String lastName, String email) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-    }
+    @ManyToOne(cascade = {CascadeType.PERSIST,
+            CascadeType.MERGE,CascadeType.REFRESH}, fetch = FetchType.LAZY)
+    @JoinColumn(name="project_id")
+    private Project project;
 }
